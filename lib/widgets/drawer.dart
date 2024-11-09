@@ -1,6 +1,6 @@
 import 'package:data_siswa/main.dart';
-import 'package:data_siswa/pages/kotaPage.dart';
-import 'package:data_siswa/pages/siswaPage.dart';
+import 'package:data_siswa/pages/Kota/kotaPage.dart';
+import 'package:data_siswa/pages/Siswa/siswaPage.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -109,7 +109,7 @@ class _AppDrawerState extends State<AppDrawer> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const KotaPage()),
+                      MaterialPageRoute(builder: (context) => KotaPage()),
                     );
                   },
                   child: const Padding(

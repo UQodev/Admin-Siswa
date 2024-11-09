@@ -1,7 +1,7 @@
 import 'package:data_siswa/model/dataSiswa.dart';
 import 'package:data_siswa/pages/homePage.dart';
-import 'package:data_siswa/pages/kotaPage.dart';
-import 'package:data_siswa/pages/siswaPage.dart';
+import 'package:data_siswa/pages/Kota/kotaPage.dart';
+import 'package:data_siswa/pages/Siswa/siswaPage.dart';
 import 'package:data_siswa/widgets/appbar.dart';
 import 'package:data_siswa/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xffd22f3c),
+              backgroundColor: const Color(0xfff94144),
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               shape: RoundedRectangleBorder(
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const KotaPage()),
+                  MaterialPageRoute(builder: (context) => KotaPage()),
                 );
               },
               icon: const Icon(
