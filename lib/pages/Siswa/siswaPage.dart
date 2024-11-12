@@ -42,7 +42,7 @@ class _SiswaPageState extends State<SiswaPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Confirm Delete'),
-          content: const Text('Are you sure you want to delete this siswa?'),
+          content: const Text('Apakah Anda yakin ingin menghapus data ini?'),
           actions: [
             TextButton(
               child: const Text('Cancel'),
@@ -67,6 +67,7 @@ class _SiswaPageState extends State<SiswaPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Data berhasil dihapus.')),
       );
+      Navigator.pop(context, true); // Send signal to HomePage to refresh data
     }
   }
 
@@ -142,19 +143,20 @@ class _SiswaPageState extends State<SiswaPage> {
                               Icons.edit,
                               color: Colors.orange,
                             ),
-                            onPressed: () {
-                              // Navigate to edit page
-                              Navigator.push(
+                            onPressed: () async {
+                              final result = await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => SiswaAddPage(
-                                      dataSiswa:
-                                          dataSiswa), // Pass the siswa to the edit page
+                                  builder: (context) =>
+                                      SiswaAddPage(dataSiswa: dataSiswa),
                                 ),
-                              ).then((_) {
+                              );
+                              if (result == true) {
                                 // Reload siswa list after returning from edit page
                                 _loadSiswaList();
-                              });
+                                // Send signal to HomePage to refresh data
+                                Navigator.pop(context, true);
+                              }
                             },
                           ),
                           // Delete Button
