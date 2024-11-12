@@ -5,7 +5,6 @@ import 'package:data_siswa/pages/Siswa/siswaAddPage.dart';
 import 'package:data_siswa/pages/Siswa/siswaPage.dart';
 import 'package:data_siswa/widgets/appbar.dart';
 import 'package:data_siswa/widgets/chart.dart';
-import 'package:data_siswa/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
