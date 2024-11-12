@@ -35,7 +35,7 @@ class _KotaPageState extends State<KotaPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Confirm Delete'),
-          content: const Text('Are you sure you want to delete this todo?'),
+          content: const Text('Apakah Anda yakin ingin menghapus data ini?'),
           actions: [
             TextButton(
               child: const Text('Cancel'),
